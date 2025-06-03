@@ -1,0 +1,63 @@
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --accent-color: #007bff;
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --primary-bg: #212529;
+  --secondary-bg: #343a40;
+  --text-color: #f8f9fa;
+  --card-bg: #343a40;
+  --accent-color: #66b0ff;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar, .footer {
+  background-color: var(--secondary-bg);
+  transition: var(--transition);
+}
+
+.card {
+  background-color: var(--card-bg);
+  transition: var(--transition);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.theme-toggle {
+  margin-right: 10px;
+}
+
+.most-popular {
+  border: 2px solid var(--accent-color);
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .theme-toggle {
+    margin: 10px;
+  }
+}
