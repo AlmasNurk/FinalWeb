@@ -129,7 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Fetch articles from articles.json
-  fetch('articles.json')
+  // Dynamically construct the path for GitHub Pages
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const repoName = isLocal ? '' : window.location.pathname.split('/')[1] || '';
+  const basePath = isLocal ? '/articles.json' : `/${repoName}/articles.json`;
+  console.log('Fetching articles from:', basePath); // Debug log
+  fetch(basePath)
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to load articles.json: ${response.status} ${response.statusText}`);
