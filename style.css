@@ -39,8 +39,30 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+.card-body {
+  color: var(--text-color);
+}
+
+.card-title {
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.card-text {
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.card-text .text-muted {
+  color: var(--text-color) !important;
+  opacity: 0.7; /* Сохраняем легкую прозрачность для метаданных */
+  transition: var(--transition);
+}
+
 .theme-toggle {
   margin-right: 10px;
+  color: var(--text-color);
+  transition: var(--transition);
 }
 
 .most-popular {
@@ -50,6 +72,21 @@ body {
 .modal-content {
   background-color: var(--card-bg);
   color: var(--text-color);
+  transition: var(--transition);
+}
+
+.modal-title {
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.modal-body p {
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.btn-close {
+  filter: var(--text-color) === #f8f9fa ? invert(1) : none; /* Инверсия цвета кнопки закрытия в dark mode */
 }
 
 @media (max-width: 576px) {
